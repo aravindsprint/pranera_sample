@@ -1,0 +1,33 @@
+<script>window.csrf_token="{{ csrf_token }}";</script>
+{%- raw -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Sample Pass — Pranera</title>
+  <meta name="theme-color" content="#1e3a5f"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="Sample Pass"/>
+  <link rel="manifest" href="/assets/pranera_sample/sample_app/manifest.webmanifest"/>
+  <link rel="icon" type="image/svg+xml" href="/assets/pranera_sample/images/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/pranera_sample/sample_app/icons/icon-192.png"/>
+  <link rel="apple-touch-icon" href="/assets/pranera_sample/sample_app/icons/icon-192.png"/>
+{%- endraw -%}
+{%- for href in entry_css %}
+  <link rel="stylesheet" crossorigin href="{{ href }}"/>
+{%- endfor %}
+{%- raw -%}
+</head>
+<body>
+  <div id="app"></div>
+{%- endraw -%}
+{%- for src in entry_js %}
+  <script type="module" crossorigin src="{{ src }}"></script>
+{%- endfor %}
+{%- raw -%}
+  <script id="vite-plugin-pwa:register-sw" src="/assets/pranera_sample/sample_app/registerSW.js"></script>
+</body>
+</html>
+{%- endraw -%}
