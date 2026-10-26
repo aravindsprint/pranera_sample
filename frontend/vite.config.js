@@ -81,7 +81,7 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: path.resolve(__dirname, 'index.html'),
       output: {
-        // Content-hashed entry. www/sample-app.py reads the real filenames
+        // Content-hashed entry. www/sample_app.py reads the real filenames
         // from the built index.html, so the page and the lazy page chunks
         // import the *same* URL. (A fixed index.js + ?v=<mtime> on the page
         // makes chunks' `import "../index.js"` a different module URL, so
@@ -103,7 +103,7 @@ export default defineConfig(({ command }) => ({
         clientsClaim: true,
         globPatterns: ['**/*.{js,css,html,png,svg,woff2}'],
         // Every screen in this app POSTs (save, approve, photo upload) and only
-        // the server-rendered /sample-app page (www/sample-app.py) injects
+        // the server-rendered /sample-app page (www/sample_app.py) injects
         // window.csrf_token — a cached static index.html never has it. So no
         // navigate fallback: navigations always hit the server; the service
         // worker only precaches JS/CSS/icons for a fast, installable app.

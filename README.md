@@ -52,7 +52,7 @@ agree.
   only precaches JS/CSS/icons so the app opens fast and installs to the home
   screen; there is no navigate fallback and no API caching.
 * **Hashed entry bundle.** The entry is `index-<hash>.js` and
-  `www/sample-app.py` reads the real filenames from the built `index.html`.
+  `www/sample_app.py` reads the real filenames from the built `index.html`.
   Lazy page chunks import that exact URL, so the app boots once. (A fixed
   `index.js` loaded with `?v=<mtime>` — the pranera_roll pattern — makes the
   chunks' `import "../index.js"` a *different* module, so the app, router and
